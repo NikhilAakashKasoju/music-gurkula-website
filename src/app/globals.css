@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  /* Lavender — the cool, primary hue (backgrounds, headings, structure) */
+  --color-lavender-950: #241a35;
+  --color-lavender-900: #2e2245;
+  --color-lavender-800: #3c2e5c;
+  --color-lavender-700: #4f3d78;
+  --color-lavender-600: #6b529f;
+  --color-lavender-500: #8a70bd;
+  --color-lavender-400: #ab95d3;
+  --color-lavender-300: #c9bbe5;
+  --color-lavender-200: #e1d8f1;
+  --color-lavender-100: #f1ecf9;
+
+  /* Begonia — the warm, primary accent (CTAs, labels, emphasis) */
+  --color-begonia-950: #3a1226;
+  --color-begonia-900: #551a37;
+  --color-begonia-800: #7a2350;
+  --color-begonia-700: #9c2b64;
+  --color-begonia-600: #c53a7e;
+  --color-begonia-500: #dd4f93;
+  --color-begonia-400: #e97fae;
+  --color-begonia-300: #f2acc7;
+  --color-begonia-200: #f8d3e0;
+  --color-begonia-100: #fcecf1;
+
+  /* Coral-red — used sparingly as a hint, never as a base color */
+  --color-coral-600: #b8412f;
+  --color-coral-500: #e0553a;
+  --color-coral-400: #ef8266;
+
+  /* Sunshine — used sparingly as a hint, never as a base color */
+  --color-sunshine-500: #f0b429;
+  --color-sunshine-400: #f6cc63;
+
+  --color-cream: #faf7fb;
+  --color-cream-100: #f3ecf6;
+  --color-ink: #2a2233;
+}
+
+@theme inline {
+  --color-lavender-950: var(--color-lavender-950);
+  --color-lavender-900: var(--color-lavender-900);
+  --color-lavender-800: var(--color-lavender-800);
+  --color-lavender-700: var(--color-lavender-700);
+  --color-lavender-600: var(--color-lavender-600);
+  --color-lavender-500: var(--color-lavender-500);
+  --color-lavender-400: var(--color-lavender-400);
+  --color-lavender-300: var(--color-lavender-300);
+  --color-lavender-200: var(--color-lavender-200);
+  --color-lavender-100: var(--color-lavender-100);
+
+  --color-begonia-950: var(--color-begonia-950);
+  --color-begonia-900: var(--color-begonia-900);
+  --color-begonia-800: var(--color-begonia-800);
+  --color-begonia-700: var(--color-begonia-700);
+  --color-begonia-600: var(--color-begonia-600);
+  --color-begonia-500: var(--color-begonia-500);
+  --color-begonia-400: var(--color-begonia-400);
+  --color-begonia-300: var(--color-begonia-300);
+  --color-begonia-200: var(--color-begonia-200);
+  --color-begonia-100: var(--color-begonia-100);
+
+  --color-coral-600: var(--color-coral-600);
+  --color-coral-500: var(--color-coral-500);
+  --color-coral-400: var(--color-coral-400);
+
+  --color-sunshine-500: var(--color-sunshine-500);
+  --color-sunshine-400: var(--color-sunshine-400);
+
+  --color-cream: var(--color-cream);
+  --color-cream-100: var(--color-cream-100);
+  --color-ink: var(--color-ink);
+
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+.image-placeholder {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.04),
+    rgba(0, 0, 0, 0.04) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+/* Gives parallax layers room to move in 3D space without clipping. */
+.parallax-scene {
+  perspective: 1200px;
+  perspective-origin: 50% 40%;
+}
+
+.parallax-layer {
+  transform-style: preserve-3d;
+  will-change: transform;
+}

@@ -1,0 +1,13 @@
+# Apache hardening for shared hosting deployments.
+# (Nginx users: see the equivalent `location` blocks in backend/README.md)
+
+# Block direct access to files that should only ever be `require`d.
+<FilesMatch "^(config\.php|db\.php|schema\.sql|seed_admin\.php)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+</IfModule>
+
+Options -Indexes
