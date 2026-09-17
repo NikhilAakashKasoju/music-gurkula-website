@@ -1,4 +1,11 @@
 import { ensureSchema, sql } from "./db";
+import { ENQUIRY_STATUSES, type EnquiryStatus } from "@/lib/enquiryStatus";
+
+// Re-exported so existing server-side imports of these two names from this
+// file keep working unchanged. Client components should import them from
+// "@/lib/enquiryStatus" directly instead (see that file for why).
+export { ENQUIRY_STATUSES };
+export type { EnquiryStatus };
 
 /**
  * Keep this in sync with src/lib/programs.ts on the frontend. The "slug"
@@ -14,13 +21,6 @@ export const PROGRAM_PATHS: Record<string, string> = {
 };
 
 export type PathSlug = keyof typeof PROGRAM_PATHS;
-export type EnquiryStatus = "new" | "contacted" | "enrolled" | "closed";
-export const ENQUIRY_STATUSES: EnquiryStatus[] = [
-  "new",
-  "contacted",
-  "enrolled",
-  "closed",
-];
 
 export interface Enquiry {
   id: number;

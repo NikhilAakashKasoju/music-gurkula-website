@@ -2,7 +2,7 @@
 
 import { useTransition } from "react";
 import { updateStatusAction } from "./actions";
-import { ENQUIRY_STATUSES, type EnquiryStatus } from "@/lib/server/enquiries";
+import { ENQUIRY_STATUSES, type EnquiryStatus } from "@/lib/enquiryStatus";
 
 export default function StatusSelect({
   id,
