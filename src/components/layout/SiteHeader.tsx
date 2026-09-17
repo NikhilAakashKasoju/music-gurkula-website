@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, Phone, X } from "lucide-react";
+import { LayoutDashboard, Menu, Phone, X } from "lucide-react";
 import Logo from "./Logo";
 import { WHATSAPP_LINK, CONTACT_SECTION_ID } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -49,6 +49,14 @@ export default function SiteHeader() {
           >
             Begin your journey
           </a>
+          <a
+            href="/admin"
+            title="Admin dashboard"
+            aria-label="Admin dashboard"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/15 text-cream/50 transition hover:border-cream/30 hover:text-cream"
+          >
+            <LayoutDashboard className="h-4 w-4" />
+          </a>
         </div>
 
         <button
@@ -92,6 +100,14 @@ export default function SiteHeader() {
             className="mt-2 rounded-full bg-begonia-500 px-5 py-2.5 text-center text-sm font-semibold text-lavender-950"
           >
             Begin your journey
+          </a>
+          <a
+            href="/admin"
+            onClick={() => setOpen(false)}
+            className="mt-1 flex items-center gap-2 rounded-lg px-2 py-2.5 text-sm font-medium text-cream/50 hover:bg-white/5"
+          >
+            <LayoutDashboard className="h-4 w-4" />
+            Admin
           </a>
         </div>
       </div>
