@@ -1,4 +1,10 @@
-# Music Gurukula — PHP + MySQL backend
+> **This folder is no longer used.** The site now handles enquiries and the
+> admin dashboard directly inside the Next.js app — see `src/app/api/enquiries/`,
+> `src/app/admin/`, and `src/lib/server/`, and the root `README.md`'s
+> "Enquiries & admin dashboard" section. This PHP version is kept only for
+> reference and can be deleted once you're comfortable with the new one.
+
+# Music Gurukula — PHP + MySQL backend (superseded)
 
 Plain PHP (no framework) that receives enquiries from the Next.js frontend
 and powers a small admin dashboard. Built to be easy to drop onto shared

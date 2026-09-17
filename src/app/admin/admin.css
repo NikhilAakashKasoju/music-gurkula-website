@@ -1,0 +1,398 @@
+:root {
+  --lavender-950: #241a35;
+  --lavender-900: #2e2245;
+  --lavender-800: #3c2e5c;
+  --lavender-700: #4f3d78;
+  --lavender-600: #6b529f;
+  --lavender-500: #8a70bd;
+  --lavender-400: #ab95d3;
+  --lavender-200: #e1d8f1;
+  --lavender-100: #f1ecf9;
+  --begonia-700: #9c2b64;
+  --begonia-600: #c53a7e;
+  --begonia-500: #dd4f93;
+  --begonia-400: #e97fae;
+  --coral-500: #e0553a;
+  --sunshine-500: #f0b429;
+  --cream: #faf7fb;
+  --ink: #2a2233;
+  --danger: #b3432f;
+}
+
+/* Scoped to .mg-admin-root rather than `body`/`*` so these styles never
+   leak into the rest of the (Tailwind-styled) site. */
+.mg-admin-root {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.mg-admin-root *,
+.mg-admin-root *::before,
+.mg-admin-root *::after {
+  box-sizing: border-box;
+}
+
+.mg-admin-root a {
+  color: inherit;
+}
+
+.mg-login-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lavender-950);
+  padding: 24px;
+}
+
+.mg-login-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--lavender-900);
+  border-radius: 20px;
+  padding: 36px 32px;
+  color: var(--cream);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.mg-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.mg-brand-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--begonia-500);
+  color: var(--lavender-950);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.mg-brand-name {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.mg-brand-name em {
+  font-style: normal;
+  color: var(--begonia-500);
+}
+
+.mg-login-card h1 {
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.mg-login-card p.mg-subtitle {
+  margin: 0 0 24px;
+  color: rgba(250, 246, 236, 0.65);
+  font-size: 14px;
+}
+
+.mg-field {
+  margin-bottom: 14px;
+}
+
+.mg-field label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(250, 246, 236, 0.6);
+  margin-bottom: 6px;
+}
+
+.mg-field input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(250, 246, 236, 0.18);
+  background: rgba(250, 246, 236, 0.08);
+  color: var(--cream);
+  font-size: 14px;
+  outline: none;
+}
+
+.mg-field input:focus {
+  border-color: var(--begonia-500);
+}
+
+.mg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 999px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.mg-btn-primary {
+  background: var(--begonia-500);
+  color: var(--lavender-950);
+  width: 100%;
+  margin-top: 8px;
+}
+
+.mg-btn-primary:hover {
+  background: var(--begonia-400);
+}
+
+.mg-alert {
+  background: rgba(179, 67, 47, 0.15);
+  border: 1px solid rgba(179, 67, 47, 0.4);
+  color: #ffb4a4;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.mg-alert-success {
+  background: rgba(76, 138, 92, 0.18);
+  border-color: rgba(76, 138, 92, 0.4);
+  color: #bfe3c8;
+}
+
+/* --- Dashboard shell ------------------------------------------------- */
+
+.mg-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-topbar {
+  background: var(--lavender-950);
+  color: var(--cream);
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mg-topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: rgba(250, 246, 236, 0.75);
+}
+
+.mg-topbar-user a {
+  color: var(--begonia-400);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mg-main {
+  flex: 1;
+  padding: 28px;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mg-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--lavender-950);
+}
+
+.mg-page-subtitle {
+  margin: 0 0 24px;
+  color: rgba(28, 38, 32, 0.6);
+  font-size: 14px;
+}
+
+.mg-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.mg-stat-card {
+  background: #fff;
+  border: 1px solid rgba(28, 38, 32, 0.08);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.mg-stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--lavender-800);
+}
+
+.mg-stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(28, 38, 32, 0.55);
+  margin-top: 4px;
+}
+
+.mg-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.mg-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(28, 38, 32, 0.1);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mg-tab.active {
+  background: var(--lavender-800);
+  border-color: var(--lavender-800);
+  color: var(--cream);
+}
+
+.mg-tab .count {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  padding: 1px 7px;
+  font-size: 11px;
+}
+
+.mg-tab.active .count {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.mg-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+.mg-toolbar input[type="search"],
+.mg-toolbar select {
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(28, 38, 32, 0.15);
+  background: #fff;
+  font-size: 13px;
+}
+
+.mg-toolbar input[type="search"] {
+  min-width: 220px;
+}
+
+.mg-table-wrap {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(28, 38, 32, 0.08);
+  overflow: hidden;
+}
+
+table.mg-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+table.mg-table th {
+  text-align: left;
+  padding: 12px 16px;
+  background: var(--lavender-100);
+  color: var(--lavender-800);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(28, 38, 32, 0.08);
+}
+
+table.mg-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(28, 38, 32, 0.06);
+  vertical-align: top;
+}
+
+table.mg-table tr:last-child td {
+  border-bottom: none;
+}
+
+.mg-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.mg-badge-hindustani-vocals { background: #e9e2f5; color: #4f3d78; }
+.mg-badge-hindustani-tabla { background: #fbe1ee; color: #9c2b64; }
+.mg-badge-hindustani-flute { background: #fbe2dc; color: #b8412f; }
+.mg-badge-bharatanatyam { background: #fdf0d6; color: #93690a; }
+.mg-badge-general { background: #eee; color: #555; }
+
+select.mg-status-select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(28, 38, 32, 0.15);
+  font-size: 12.5px;
+  background: #fff;
+}
+
+.mg-empty {
+  padding: 48px 16px;
+  text-align: center;
+  color: rgba(28, 38, 32, 0.5);
+  font-size: 14px;
+}
+
+.mg-muted {
+  color: rgba(28, 38, 32, 0.5);
+  font-size: 12px;
+}
+
+.mg-pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.mg-pagination a {
+  padding: 7px 13px;
+  border-radius: 8px;
+  border: 1px solid rgba(28, 38, 32, 0.12);
+  text-decoration: none;
+  font-size: 13px;
+  background: #fff;
+}
+
+.mg-pagination a.active {
+  background: var(--lavender-800);
+  color: var(--cream);
+  border-color: var(--lavender-800);
+}
